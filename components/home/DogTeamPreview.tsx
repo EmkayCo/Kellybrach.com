@@ -37,8 +37,9 @@ export default function DogTeamPreview({ dogs }: { dogs: Dog[] }) {
 
         <div className="mt-10 border-t border-white/10 pt-8">
           <p className="font-body text-gray-400 text-sm italic max-w-xl">
-            "Every one of these dogs has been trained specifically for lost pet recovery —
-            not competition, not detection. Their only job is finding your family member."
+            "Enzo and Sonja started it. Maggie is Sonja's daughter. Dino is Maggie
+            and Enzo's son. They've been tracking together their whole lives —
+            and their only job is finding your family member."
           </p>
           <p className="font-body text-warm-gold text-xs mt-2 font-semibold">— Kelly Brach</p>
         </div>

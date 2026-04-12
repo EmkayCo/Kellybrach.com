@@ -89,24 +89,24 @@ export default function MeetTheTeamPage() {
 
               <div className="space-y-4 text-gray-700 font-body leading-relaxed">
                 <p>
-                  Kelly Brach is a professional K9 handler specializing in lost pet
-                  recovery using trained tracking and trailing dogs. Based in Kings
-                  Park, NY, Kelly serves families throughout Long Island, the
-                  tri-state area, and beyond.
+                  In February 2018, Kelly's own cats — Frankie and Tony — went
+                  missing. She searched the way everyone searches: social media,
+                  flyers, driving around at night. It wasn't enough. The experience
+                  of not knowing where to look, of having no real data, changed
+                  everything.
                 </p>
                 <p>
-                  Her journey into lost pet recovery grew from a deep passion for
-                  animals and a recognition that traditional searching methods — social
-                  media posts, flyers, driving around — leave too much to chance.
-                  Professional K9 tracking gives families something those methods can't:
-                  actual data about where their pet went.
+                  She trained her Czech Shepherd Enzo in lost pet tracking and
+                  trailing. Then came Sonja, then Maggie (Sonja's daughter), then
+                  Dino (Maggie and Enzo's son). What started from loss became a
+                  team — and a mission to give other families the one thing she
+                  didn't have: an actual trail to follow.
                 </p>
                 <p>
-                  Kelly has worked hundreds of cases involving dogs, cats, and other
-                  animals across varied terrain, weather conditions, and circumstances.
-                  She has worked alongside animal control officers, investigated
-                  suspected theft cases, and helped families whose pets were missing
-                  for days before they knew professional K9 help was available.
+                  Kelly has since worked hundreds of cases across Long Island, the
+                  tri-state area, and beyond — alongside animal control officers,
+                  fire departments, and families who had been searching for days
+                  before they knew K9 help existed.
                 </p>
               </div>
 

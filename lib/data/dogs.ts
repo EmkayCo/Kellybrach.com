@@ -16,40 +16,40 @@ export const DOGS: Dog[] = [
   {
     slug: 'enzo',
     name: 'Enzo',
-    breed: 'German Shepherd',
+    breed: 'Czech Shepherd',
     specialty: 'Tracking & Trailing',
     trainingBackground:
-      'Enzo has worked hundreds of real lost-pet cases across Long Island and the tri-state area. He was recognized with a formal commendation from the Somerset Town Council for his invaluable effort in finding lost animals — the kind of real-world validation that speaks louder than any title.',
+      'Enzo has worked hundreds of real lost-pet cases across Long Island and the tri-state area. He was formally commended by the Somerset Town Council for his invaluable effort in finding a lost animal — the kind of real-world validation that speaks louder than any certification.',
     photo: '/images/dogs/enzo.jpg',
-    active: true,
-  },
-  {
-    slug: 'maggie',
-    name: 'Maggie',
-    breed: 'Bloodhound',
-    specialty: 'Trailing Specialist',
-    trainingBackground:
-      'Maggie brings unmatched scenting ability to cold trails — cases where hours or even days have passed. Her long, low-set ears and wrinkled face funnel scent directly to her nose as she works.',
-    photo: '/images/dogs/maggie.jpg',
     active: true,
   },
   {
     slug: 'sonja',
     name: 'Sonja',
-    breed: 'German Shepherd',
-    specialty: 'Tracking Specialist',
+    breed: 'Belgian Shepherd',
+    specialty: 'Trailing Specialist',
     trainingBackground:
-      'Sonja is a precision tracker trained to work in dense suburban environments. She excels in neighborhoods with heavy foot traffic where scent contamination is highest.',
+      'Sonja is a precision trailer at 65 lbs — fast, focused, and relentless on a cold scent. She works suburban and dense terrain where contamination is highest, and her drive in the field is the reason her daughter Maggie is on this team.',
     photo: '/images/dogs/sonja.jpg',
+    active: true,
+  },
+  {
+    slug: 'maggie',
+    name: 'Maggie',
+    breed: 'Belgian Shepherd / Malinois',
+    specialty: 'Scent Trailing',
+    trainingBackground:
+      'Maggie is Sonja\'s daughter — her father was a bomb-scent-trained Belgian Malinois. At 70 lbs she has her mother\'s drive and her father\'s intensity. She excels on trails where the scent has had time to settle, and she does not quit.',
+    photo: '/images/dogs/maggie.jpg',
     active: true,
   },
   {
     slug: 'dino',
     name: 'Dino',
-    breed: 'Coonhound',
+    breed: 'Belgian Shepherd',
     specialty: 'Tracking & Trailing',
     trainingBackground:
-      'Dino was bred for exactly this kind of work. His drive and endurance allow him to work long, complex trails without losing focus. He has located cats, dogs, and other animals on cases spanning multiple days.',
+      'Dino is the youngest and the biggest — 110 lbs, son of Maggie and Enzo. He inherited Enzo\'s endurance and Maggie\'s nose. He was the youngest dog on this team to work a real case, and he has not stopped since.',
     photo: '/images/dogs/dino.jpg',
     active: true,
   },
