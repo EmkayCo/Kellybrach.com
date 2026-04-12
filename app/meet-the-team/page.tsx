@@ -119,6 +119,43 @@ export default function MeetTheTeamPage() {
               </div>
             </div>
           </div>
+
+          {/* Frankie & Tony — the origin */}
+          <div className="mt-16 grid grid-cols-1 md:grid-cols-[1fr_2px_1fr] gap-8 md:gap-0 items-center border-t border-gray-200 pt-12">
+            <div className="md:pr-10">
+              <p className="label-overline text-warm-gold mb-3">Where It Started</p>
+              <h3 className="font-display text-2xl font-bold text-navy mb-4 leading-snug">
+                Frankie &amp; Tony.<br />February 2018.
+              </h3>
+              <p className="font-body text-gray-600 leading-relaxed text-sm">
+                Kelly's own cats went missing — and she searched the way every desperate
+                owner searches. She posted on Facebook. She drove around at 2am. She called
+                neighbors. She had no trail, no data, no direction.
+              </p>
+              <p className="font-body text-gray-600 leading-relaxed text-sm mt-3">
+                That helplessness is why this business exists. If you're reading this with
+                a missing pet right now, Kelly knows exactly how you feel. She built this
+                service so you don't have to search without a trail.
+              </p>
+            </div>
+
+            <div className="hidden md:block w-px bg-gray-200 self-stretch mx-auto" />
+
+            <div className="md:pl-10">
+              <div className="relative aspect-[4/3] rounded-sm overflow-hidden bg-gray-100">
+                <Image
+                  src="/images/frankie-tony.jpg"
+                  alt="Frankie and Tony — Kelly's cats, February 2018"
+                  fill
+                  className="object-cover"
+                  sizes="(max-width: 768px) 100vw, 50vw"
+                />
+              </div>
+              <p className="text-xs text-gray-400 font-body mt-2 text-center">
+                Frankie &amp; Tony — the reason this all started.
+              </p>
+            </div>
+          </div>
         </div>
       </section>
 
