@@ -2,6 +2,8 @@ import { NextRequest, NextResponse } from 'next/server'
 import { Resend } from 'resend'
 import { z } from 'zod'
 
+export const dynamic = 'force-dynamic'
+
 const schema = z.object({
   fullName: z.string().min(2),
   phone: z.string().min(10),
@@ -12,7 +14,15 @@ const schema = z.object({
   howHeard: z.string().optional(),
 })
 
-const resend = new Resend(process.env.RESEND_API_KEY)
+// Lazily initialized — avoids Resend constructor throwing at build time
+// when RESEND_API_KEY is not set in the build environment.
+let _resend: Resend | null = null
+function getResend(): Resend {
+  if (!_resend) {
+    _resend = new Resend(process.env.RESEND_API_KEY ?? '')
+  }
+  return _resend
+}
 
 export async function POST(req: NextRequest) {
   let body: unknown
@@ -95,7 +105,7 @@ export async function POST(req: NextRequest) {
 `
 
   try {
-    await resend.emails.send({
+    await getResend().emails.send({
       from: 'Kelly Brach Site <noreply@kellybrach.com>',
       to: ['kelly@kellybrach.com'],
       reply_to: data.email,
