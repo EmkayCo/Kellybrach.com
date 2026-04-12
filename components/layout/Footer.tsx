@@ -69,7 +69,7 @@ export default function Footer({
                 <p className="text-gray-500 text-xs mb-1 label-overline">Call or text</p>
                 <a
                   href={phoneHref}
-                  className="font-mono text-lg text-warm-gold hover:text-yellow-300 transition-colors font-bold tracking-tight"
+                  className="font-mono text-lg text-warm-gold hover:text-red-300 transition-colors font-bold tracking-tight"
                 >
                   {phone}
                 </a>
@@ -79,7 +79,7 @@ export default function Footer({
                 <p className="text-gray-500 text-xs mb-1 label-overline">Email</p>
                 <a
                   href={`mailto:${email}`}
-                  className="text-warm-gold hover:text-yellow-300 transition-colors"
+                  className="text-warm-gold hover:text-red-300 transition-colors"
                 >
                   {email}
                 </a>

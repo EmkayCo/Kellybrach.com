@@ -27,7 +27,7 @@ export default function UrgencyStrip({
         </div>
         <a
           href={phoneHref}
-          className="shrink-0 font-mono text-xl md:text-2xl font-bold text-warm-gold hover:text-yellow-300 transition-colors tracking-tight"
+          className="shrink-0 font-mono text-xl md:text-2xl font-bold text-warm-gold hover:text-red-300 transition-colors tracking-tight"
         >
           {phone}
         </a>

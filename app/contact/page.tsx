@@ -79,7 +79,7 @@ export default function ContactPage() {
                     <p className="label-overline text-gray-400 mb-1">Phone / Text</p>
                     <a
                       href={SITE.phoneHref}
-                      className="font-mono text-2xl font-bold text-warm-gold hover:text-yellow-300 transition-colors"
+                      className="font-mono text-2xl font-bold text-warm-gold hover:text-red-300 transition-colors"
                     >
                       {SITE.phone}
                     </a>
@@ -88,7 +88,7 @@ export default function ContactPage() {
                     <p className="label-overline text-gray-400 mb-1">Email</p>
                     <a
                       href={`mailto:${SITE.email}`}
-                      className="text-warm-gold hover:text-yellow-300 transition-colors text-sm"
+                      className="text-warm-gold hover:text-red-300 transition-colors text-sm"
                     >
                       {SITE.email}
                     </a>

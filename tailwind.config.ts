@@ -9,11 +9,11 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        navy: '#1B2B3B',
+        navy: '#141414',
         forest: '#2D5016',
-        'warm-gold': '#C8922A',
+        'warm-gold': '#D12020',
         cream: '#F7F3ED',
-        'red-alert': '#B91C1C',
+        'red-alert': '#7F1D1D',
       },
       fontFamily: {
         // These reference the CSS custom properties set in app/layout.tsx <style>

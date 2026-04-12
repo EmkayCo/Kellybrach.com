@@ -3,12 +3,12 @@
 @tailwind utilities;
 
 :root {
-  --navy: #1B2B3B;
+  --navy: #141414;
   --forest: #2D5016;
-  --warm-gold: #C8922A;
+  --warm-gold: #D12020;
   --cream: #F7F3ED;
   --white: #FFFFFF;
-  --red-alert: #B91C1C;
+  --red-alert: #7F1D1D;
 }
 
 @layer base {
@@ -31,7 +31,7 @@
   /* ── Buttons ──────────────────────────────────────────── */
 
   .btn-primary {
-    @apply inline-flex items-center justify-center px-6 py-3 bg-warm-gold text-white font-body font-semibold rounded-sm hover:bg-amber-700 active:bg-amber-800 transition-colors duration-150 focus:outline-none focus:ring-2 focus:ring-warm-gold focus:ring-offset-2 tracking-wide;
+    @apply inline-flex items-center justify-center px-6 py-3 bg-warm-gold text-white font-body font-semibold rounded-sm hover:bg-red-800 active:bg-red-900 transition-colors duration-150 focus:outline-none focus:ring-2 focus:ring-warm-gold focus:ring-offset-2 tracking-wide;
   }
 
   .btn-ghost {
@@ -44,7 +44,7 @@
 
   /* Large urgent CTA — phone numbers, final sections */
   .btn-cta {
-    @apply inline-flex items-center justify-center gap-3 px-8 py-4 bg-warm-gold text-white font-mono font-bold text-xl rounded-sm hover:bg-amber-700 active:scale-[0.98] transition-all duration-150 focus:outline-none focus:ring-2 focus:ring-warm-gold focus:ring-offset-2 tracking-tight shadow-lg shadow-warm-gold/20;
+    @apply inline-flex items-center justify-center gap-3 px-8 py-4 bg-warm-gold text-white font-mono font-bold text-xl rounded-sm hover:bg-red-800 active:scale-[0.98] transition-all duration-150 focus:outline-none focus:ring-2 focus:ring-warm-gold focus:ring-offset-2 tracking-tight shadow-lg shadow-warm-gold/20;
   }
 
   /* ── Layout ───────────────────────────────────────────── */
@@ -96,7 +96,7 @@
   .track-divider {
     position: relative;
     height: 2px;
-    background: linear-gradient(90deg, transparent, #C8922A 20%, #C8922A 80%, transparent);
+    background: linear-gradient(90deg, transparent, #D12020 20%, #D12020 80%, transparent);
     opacity: 0.5;
   }
   .track-divider::before,
@@ -107,7 +107,7 @@
     width: 8px;
     height: 8px;
     border-radius: 50%;
-    background: #C8922A;
+    background: #D12020;
     transform: translateY(-50%);
   }
   .track-divider::before { left: 20%; }
@@ -120,7 +120,7 @@
 
   /* Dot grid background — map/navigation motif */
   .dot-grid {
-    background-image: radial-gradient(circle, #C8922A 1px, transparent 1px);
+    background-image: radial-gradient(circle, #D12020 1px, transparent 1px);
     background-size: 24px 24px;
   }
 }

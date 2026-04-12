@@ -3,6 +3,7 @@ import '@/styles/globals.css'
 import Navbar from '@/components/layout/Navbar'
 import Footer from '@/components/layout/Footer'
 import ScamBanner from '@/components/layout/ScamBanner'
+import LoadModal from '@/components/layout/LoadModal'
 import { SITE } from '@/lib/data/site'
 
 export const metadata: Metadata = {
@@ -38,6 +39,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         `}</style>
       </head>
       <body className="min-h-screen flex flex-col">
+        <LoadModal phone={SITE.phone} phoneHref={SITE.phoneHref} />
         {SITE.scamAlertActive && <ScamBanner text={SITE.scamAlertText} />}
         <Navbar phone={SITE.phone} />
         <main className="flex-1">{children}</main>
