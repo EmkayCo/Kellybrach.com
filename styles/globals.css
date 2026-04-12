@@ -4,11 +4,11 @@
 
 :root {
   --navy: #141414;
-  --forest: #2D5016;
-  --warm-gold: #D12020;
+  --forest: #374151;
+  --warm-gold: #8B1818;
   --cream: #F7F3ED;
   --white: #FFFFFF;
-  --red-alert: #7F1D1D;
+  --red-alert: #5A1010;
 }
 
 @layer base {
@@ -96,7 +96,7 @@
   .track-divider {
     position: relative;
     height: 2px;
-    background: linear-gradient(90deg, transparent, #D12020 20%, #D12020 80%, transparent);
+    background: linear-gradient(90deg, transparent, #8B1818 20%, #8B1818 80%, transparent);
     opacity: 0.5;
   }
   .track-divider::before,
@@ -107,7 +107,7 @@
     width: 8px;
     height: 8px;
     border-radius: 50%;
-    background: #D12020;
+    background: #8B1818;
     transform: translateY(-50%);
   }
   .track-divider::before { left: 20%; }
@@ -120,7 +120,7 @@
 
   /* Dot grid background — map/navigation motif */
   .dot-grid {
-    background-image: radial-gradient(circle, #D12020 1px, transparent 1px);
+    background-image: radial-gradient(circle, #8B1818 1px, transparent 1px);
     background-size: 24px 24px;
   }
 }

@@ -53,7 +53,7 @@ export default function SuccessStoriesPage() {
                     <p className="font-body text-xs text-gray-500">
                       {featured[0].petName} · {featured[0].location}
                       {featured[0].outcome === 'found' && (
-                        <span className="ml-2 text-forest font-semibold">✓ Found</span>
+                        <span className="ml-2 text-gray-500 font-semibold">✓ Found</span>
                       )}
                     </p>
                   </div>
@@ -76,7 +76,7 @@ export default function SuccessStoriesPage() {
                         <p className="font-body text-xs text-gray-400">
                           {t.petName} · {t.location}
                           {t.outcome === 'found' && (
-                            <span className="ml-2 text-forest font-semibold">✓ Found</span>
+                            <span className="ml-2 text-gray-500 font-semibold">✓ Found</span>
                           )}
                         </p>
                       </div>

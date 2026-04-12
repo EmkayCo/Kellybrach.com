@@ -195,7 +195,7 @@ export default function HowItWorksPage() {
 
           <div className="mt-10 grid grid-cols-1 md:grid-cols-2 gap-6">
             {trackFactors.map((factor) => (
-              <div key={factor.title} className="bg-cream rounded-xl p-6 border border-gray-100">
+              <div key={factor.title} className="bg-cream rounded-sm p-6 border border-gray-100">
                 <div className="text-3xl mb-3">{factor.icon}</div>
                 <h3 className="font-display text-lg font-bold text-navy mb-2">
                   {factor.title}

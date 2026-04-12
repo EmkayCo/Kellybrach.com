@@ -68,7 +68,7 @@ export default function ServiceAreaPage() {
             </div>
 
             {/* Map embed */}
-            <div className="rounded-xl overflow-hidden shadow-lg border border-gray-200">
+            <div className="rounded-sm overflow-hidden shadow-lg border border-gray-200">
               <iframe
                 src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d355285!2d-73.2440!3d40.8900!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sus!4v1700000000000!5m2!1sen!2sus"
                 width="100%"
@@ -93,7 +93,7 @@ export default function ServiceAreaPage() {
             centered
           />
 
-          <div className="mt-10 rounded-xl overflow-hidden shadow-sm border border-gray-200">
+          <div className="mt-10 rounded-sm overflow-hidden shadow-sm border border-gray-200">
             {coveredAreas.map((area, i) => (
               <div
                 key={area.state}
@@ -105,14 +105,14 @@ export default function ServiceAreaPage() {
                   <p className={`font-semibold font-body ${area.priority ? 'text-navy' : 'text-gray-500'}`}>
                     {area.state}
                     {area.priority && (
-                      <span className="ml-2 text-xs bg-forest/10 text-forest px-1.5 py-0.5 rounded font-normal">
+                      <span className="ml-2 text-xs bg-navy/10 text-gray-600 px-1.5 py-0.5 rounded font-normal">
                         Primary
                       </span>
                     )}
                   </p>
                   <p className="text-sm text-gray-500 font-body">{area.notes}</p>
                 </div>
-                <div className={`text-xl ${area.priority ? 'text-forest' : 'text-gray-300'}`}>
+                <div className={`text-xl ${area.priority ? 'text-warm-gold' : 'text-gray-300'}`}>
                   {area.priority ? '✓' : '~'}
                 </div>
               </div>
@@ -128,7 +128,7 @@ export default function ServiceAreaPage() {
             title="Travel Policy"
             subtitle="Transparency about how travel works."
           />
-          <div className="mt-8 space-y-4 font-body text-gray-700 bg-white rounded-xl p-6 shadow-sm border border-gray-100">
+          <div className="mt-8 space-y-4 font-body text-gray-700 bg-white rounded-sm p-6 shadow-sm border border-gray-100">
             <p>
               Most K9 handlers, including us, charge a travel fee for searches
               outside our immediate area. This covers fuel, time, and overnight

@@ -8,7 +8,7 @@ export default function GPSTrackCard({ track }: { track: GPSTrack }) {
 
   return (
     <div className="bg-white rounded-sm overflow-hidden shadow-md hover:shadow-lg transition-shadow">
-      <div className="relative aspect-video bg-forest/10">
+      <div className="relative aspect-video bg-navy/10">
         {track.image ? (
           <Image src={track.image} alt={track.title} fill className="object-cover"
             sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" />
@@ -19,7 +19,7 @@ export default function GPSTrackCard({ track }: { track: GPSTrack }) {
       <div className="p-4">
         <h3 className="font-display text-base font-bold text-navy mb-2">{track.title}</h3>
         <div className="flex flex-wrap gap-1.5 mb-2">
-          <span className="text-xs bg-forest/10 text-forest font-semibold px-2 py-0.5 rounded-sm">📍 {track.locationLabel}</span>
+          <span className="text-xs bg-navy/8 text-gray-600 font-semibold px-2 py-0.5 rounded-sm">📍 {track.locationLabel}</span>
           <span className="text-xs bg-navy/10 text-navy font-semibold px-2 py-0.5 rounded-sm capitalize">{track.petType}</span>
           {date && <span className="text-xs text-gray-400 font-mono">{date}</span>}
         </div>

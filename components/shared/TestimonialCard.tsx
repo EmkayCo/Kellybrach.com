@@ -7,7 +7,7 @@ function Stars({ n }: { n: number }) {
 export default function TestimonialCard({ t, featured = false }: { t: Testimonial; featured?: boolean }) {
   const icon = t.petType === 'cat' ? '🐱' : '🐾'
   return (
-    <div className={`bg-white rounded-sm p-6 shadow-sm border-l-4 ${featured ? 'border-warm-gold' : 'border-forest/20'}`}>
+    <div className={`bg-white rounded-sm p-6 shadow-sm border-l-4 ${featured ? 'border-warm-gold' : 'border-gray-200'}`}>
       <Stars n={t.rating} />
       <blockquote className="text-gray-700 font-body leading-relaxed mt-3 mb-4 italic text-sm">
         "{t.quote}"
@@ -18,7 +18,7 @@ export default function TestimonialCard({ t, featured = false }: { t: Testimonia
           <p className="font-semibold text-navy text-sm">{t.ownerName}</p>
           <p className="text-xs text-gray-500">
             {t.petName} · {t.location}
-            {t.outcome === 'found' && <span className="ml-2 text-forest font-semibold">✓ Found</span>}
+            {t.outcome === 'found' && <span className="ml-2 text-gray-500 font-semibold">✓ Found</span>}
           </p>
         </div>
       </div>

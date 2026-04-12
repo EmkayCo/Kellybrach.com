@@ -10,10 +10,10 @@ const config: Config = {
     extend: {
       colors: {
         navy: '#141414',
-        forest: '#2D5016',
-        'warm-gold': '#D12020',
+        forest: '#374151',
+        'warm-gold': '#8B1818',
         cream: '#F7F3ED',
-        'red-alert': '#7F1D1D',
+        'red-alert': '#5A1010',
       },
       fontFamily: {
         // These reference the CSS custom properties set in app/layout.tsx <style>

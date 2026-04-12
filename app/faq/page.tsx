@@ -146,17 +146,17 @@ export default function FAQPage() {
 
       {/* Hero */}
       <section className="bg-navy text-white py-20">
-        <div className="section-container max-w-2xl">
-          <p className="font-mono text-warm-gold text-sm tracking-widest mb-4">
-            FREQUENTLY ASKED QUESTIONS
-          </p>
-          <h1 className="font-display text-4xl md:text-5xl font-bold mb-4">
-            Everything You Need to Know
-          </h1>
-          <p className="text-xl text-gray-200 font-body leading-relaxed">
-            Questions about our process, our K9 team, what to expect, and how
-            to give your pet the best chance of being found.
-          </p>
+        <div className="section-container">
+          <div className="max-w-2xl">
+            <p className="label-overline text-warm-gold mb-4">Frequently Asked Questions</p>
+            <h1 className="font-display text-4xl md:text-5xl font-bold mb-4">
+              Everything You Need to Know
+            </h1>
+            <p className="text-xl text-gray-200 font-body leading-relaxed">
+              Questions about our process, our K9 team, what to expect, and how
+              to give your pet the best chance of being found.
+            </p>
+          </div>
         </div>
       </section>
 

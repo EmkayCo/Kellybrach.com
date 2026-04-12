@@ -43,7 +43,7 @@ export default function GPSTracksPage() {
       {/* Hero */}
       <section className="bg-navy relative overflow-hidden py-20">
         <div className="absolute inset-0 opacity-[0.04]" style={{
-          backgroundImage: 'linear-gradient(#C8922A 1px, transparent 1px), linear-gradient(90deg, #C8922A 1px, transparent 1px)',
+          backgroundImage: 'linear-gradient(#8B1818 1px, transparent 1px), linear-gradient(90deg, #8B1818 1px, transparent 1px)',
           backgroundSize: '40px 40px',
         }} />
         <div className="section-container relative z-10">

@@ -22,7 +22,7 @@ export default function DogCard({ dog }: { dog: Dog }) {
           <h3 className="font-display text-xl font-bold text-navy">{dog.name}</h3>
           <span className="shrink-0 label-overline text-warm-gold text-[9px]">{dog.specialty}</span>
         </div>
-        <p className="text-xs text-forest font-semibold tracking-wide uppercase mb-3">{dog.breed}</p>
+        <p className="text-xs text-gray-500 font-semibold tracking-wide uppercase mb-3">{dog.breed}</p>
         <div className="w-6 h-px bg-warm-gold mb-3 opacity-60" />
         <p className="text-sm text-gray-500 leading-relaxed line-clamp-3">{dog.trainingBackground}</p>
       </div>

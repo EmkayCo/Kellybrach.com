@@ -31,7 +31,7 @@ export default function TrustBar() {
               className={`px-6 py-8 relative ${i < stats.length - 1 ? 'border-r border-gray-100' : ''} ${i >= 2 ? 'border-t border-gray-100 lg:border-t-0' : ''}`}>
               {/* Gold accent line at top */}
               <div className="w-8 h-0.5 bg-warm-gold mb-4 opacity-80" />
-              <p className="stat-number text-4xl md:text-5xl text-forest mb-2 tabular-nums">
+              <p className="stat-number text-4xl md:text-5xl text-warm-gold mb-2 tabular-nums">
                 {stat.value}
               </p>
               <p className="font-body font-bold text-navy text-sm mb-1">

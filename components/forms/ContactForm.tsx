@@ -67,12 +67,12 @@ export default function ContactForm({ phone = '631-973-LOST' }: ContactFormProps
 
   if (submitted) {
     return (
-      <div className="bg-green-50 border-2 border-green-400 rounded-xl p-8 text-center">
-        <div className="text-5xl mb-4">✅</div>
-        <h3 className="font-display text-2xl font-bold text-green-800 mb-2">
+      <div className="bg-navy text-white rounded-sm p-8 text-center">
+        <div className="text-5xl mb-4">✓</div>
+        <h3 className="font-display text-2xl font-bold text-white mb-2">
           Message Received
         </h3>
-        <p className="text-green-700 font-body mb-4">
+        <p className="text-gray-300 font-body mb-4">
           Kelly will respond to your inquiry as quickly as possible. For the fastest
           response, please also call or text directly.
         </p>

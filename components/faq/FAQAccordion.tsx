@@ -41,7 +41,7 @@ export default function FAQAccordion({ categories }: { categories: FAQCategory[]
           <h2 className="font-display text-2xl font-bold text-forest mb-4 pb-2 border-b-2 border-warm-gold/30">
             {category.title}
           </h2>
-          <div className="bg-white rounded-xl px-6 divide-y divide-gray-100 shadow-sm">
+          <div className="bg-white rounded-sm px-6 divide-y divide-gray-100 shadow-sm">
             {category.items.map((item) => (
               <FAQItem key={item.q} question={item.q} answer={item.a} />
             ))}

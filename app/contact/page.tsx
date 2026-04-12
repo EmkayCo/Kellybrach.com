@@ -119,7 +119,7 @@ export default function ContactPage() {
                     'Your exact location for us to meet you',
                   ].map((item) => (
                     <li key={item} className="flex items-start gap-2 text-sm font-body text-gray-700">
-                      <span className="text-forest mt-0.5 shrink-0">✓</span>
+                      <span className="text-warm-gold mt-0.5 shrink-0 font-bold">✓</span>
                       {item}
                     </li>
                   ))}
