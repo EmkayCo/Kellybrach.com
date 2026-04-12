@@ -53,4 +53,24 @@ export const DOGS: Dog[] = [
     photo: '/images/dogs/dino.jpg',
     active: true,
   },
+  {
+    slug: 'elenor',
+    name: 'Elenor',
+    breed: 'Belgian Shepherd',
+    specialty: 'Tracking & Trailing',
+    trainingBackground:
+      'Elenor is the newest addition to the Kelly Brach K9 team. Trained in scent-specific tracking and trailing, she brings fresh drive and focus to every search. Her case history will be updated as she builds her field record.',
+    photo: '/images/dogs/elenor.jpg',
+    active: true,
+  },
+  {
+    slug: 'nova',
+    name: 'Nova',
+    breed: 'Belgian Shepherd',
+    specialty: 'Trailing Specialist',
+    trainingBackground:
+      'Nova rounds out the team with precision trailing ability and a nose that does not miss. Like all Kelly Brach K9s, she is trained specifically for lost pet recovery — not competition, not detection. Her only job is finding your family member.',
+    photo: '/images/dogs/nova.jpg',
+    active: true,
+  },
 ]

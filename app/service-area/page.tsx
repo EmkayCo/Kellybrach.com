@@ -99,7 +99,7 @@ export default function ServiceAreaPage() {
                 key={area.state}
                 className={`flex items-center justify-between p-4 ${
                   i < coveredAreas.length - 1 ? 'border-b border-gray-100' : ''
-                } ${area.priority ? 'bg-white' : 'bg-gray-50'}`}
+                } ${area.priority ? 'bg-white' : 'bg-white/60'}`}
               >
                 <div>
                   <p className={`font-semibold font-body ${area.priority ? 'text-navy' : 'text-gray-500'}`}>

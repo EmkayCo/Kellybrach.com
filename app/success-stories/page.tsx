@@ -106,17 +106,17 @@ export default function SuccessStoriesPage() {
       )}
 
       {/* Stats strip */}
-      <section className="bg-forest text-white py-16">
+      <section className="bg-white border-y border-gray-100 py-16">
         <div className="section-container">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+          <div className="grid grid-cols-1 md:grid-cols-3 divide-y md:divide-y-0 md:divide-x divide-gray-100 text-center">
             {[
-              { num: '100+', label: 'Searches Conducted' },
-              { num: '4', label: 'Trained K9s on the Team' },
-              { num: 'Northeast', label: 'Our Coverage Area' },
+              { num: '1500+', label: 'Searches Conducted' },
+              { num: '6',     label: 'Trained K9s on the Team' },
+              { num: 'NE',    label: 'Northeast Coverage' },
             ].map((stat) => (
-              <div key={stat.label}>
-                <p className="stat-number text-warm-gold">{stat.num}</p>
-                <p className="font-body text-white/80 mt-1">{stat.label}</p>
+              <div key={stat.label} className="py-6 md:py-0">
+                <p className="font-display font-bold text-warm-gold text-5xl leading-none mb-2">{stat.num}</p>
+                <p className="font-body text-navy font-semibold text-sm">{stat.label}</p>
               </div>
             ))}
           </div>

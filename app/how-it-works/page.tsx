@@ -165,7 +165,7 @@ export default function HowItWorksPage() {
                     {step.icon}
                   </div>
                   {i < steps.length - 1 && (
-                    <div className="w-0.5 flex-1 bg-forest/20 mt-2" />
+                    <div className="w-0.5 flex-1 bg-gray-200 mt-2" />
                   )}
                 </div>
 

@@ -4,7 +4,7 @@ import type { Dog } from '@/lib/data/dogs'
 export default function DogCard({ dog }: { dog: Dog }) {
   return (
     <div className="bg-white rounded-sm overflow-hidden shadow-md hover:shadow-xl transition-shadow duration-300 group">
-      <div className="relative aspect-square bg-forest/10 overflow-hidden">
+      <div className="relative aspect-square bg-gray-100 overflow-hidden">
         <Image
           src={dog.photo}
           alt={`K9 ${dog.name}`}
@@ -18,13 +18,11 @@ export default function DogCard({ dog }: { dog: Dog }) {
         </div>
       </div>
       <div className="p-4">
-        <div className="flex items-baseline justify-between gap-2 mb-1">
-          <h3 className="font-display text-xl font-bold text-navy">{dog.name}</h3>
-          <span className="shrink-0 label-overline text-warm-gold text-[9px]">{dog.specialty}</span>
-        </div>
+        <h3 className="font-display text-xl font-bold text-navy leading-tight">{dog.name}</h3>
+        <p className="label-overline text-warm-gold text-[9px] mb-2 mt-0.5">{dog.specialty}</p>
         <p className="text-xs text-gray-500 font-semibold tracking-wide uppercase mb-3">{dog.breed}</p>
         <div className="w-6 h-px bg-warm-gold mb-3 opacity-60" />
-        <p className="text-sm text-gray-500 leading-relaxed line-clamp-3">{dog.trainingBackground}</p>
+        <p className="text-sm text-gray-500 leading-relaxed">{dog.trainingBackground}</p>
       </div>
     </div>
   )

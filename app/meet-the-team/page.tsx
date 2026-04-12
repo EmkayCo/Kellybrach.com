@@ -68,7 +68,7 @@ export default function MeetTheTeamPage() {
       <section className="section-padding bg-cream grain-overlay">
         <div className="section-container">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <div className="relative aspect-[4/3] bg-forest/10 rounded-sm overflow-hidden">
+            <div className="relative aspect-[4/3] bg-cream/40 rounded-sm overflow-hidden">
               <Image
                 src="/images/kelly.jpg"
                 alt="Kelly Brach — K9 Handler"
@@ -142,7 +142,7 @@ export default function MeetTheTeamPage() {
             <div className="hidden md:block w-px bg-gray-200 self-stretch mx-auto" />
 
             <div className="md:pl-10">
-              <div className="relative aspect-[4/3] rounded-sm overflow-hidden bg-gray-100">
+              <div className="relative aspect-[4/3] rounded-sm overflow-hidden bg-cream/40">
                 <Image
                   src="/images/frankie-tony.jpg"
                   alt="Frankie and Tony — Kelly's cats, February 2018"
@@ -165,7 +165,7 @@ export default function MeetTheTeamPage() {
           <div className="mb-12">
             <p className="label-overline text-warm-gold mb-3">The K9 Team</p>
             <h2 className="font-display text-4xl md:text-5xl font-bold text-white leading-tight">
-              Four noses.<br />
+              Six noses.<br />
               <span className="text-warm-gold italic">Proven in the field.</span>
             </h2>
             <p className="text-gray-300 font-body mt-4 max-w-xl leading-relaxed">
@@ -174,7 +174,7 @@ export default function MeetTheTeamPage() {
             </p>
           </div>
 
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
             {activeDogs.map((dog) => (
               <DogCard key={dog.slug} dog={dog} />
             ))}

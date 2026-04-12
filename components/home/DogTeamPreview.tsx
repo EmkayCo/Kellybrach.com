@@ -10,7 +10,7 @@ export default function DogTeamPreview({ dogs }: { dogs: Dog[] }) {
           <div>
             <p className="label-overline text-warm-gold mb-3">The K9 Team</p>
             <h2 className="font-display text-4xl md:text-5xl font-bold text-white leading-tight">
-              Four noses.<br />
+              Six noses.<br />
               <span className="text-warm-gold italic">Proven in the field.</span>
             </h2>
           </div>
@@ -20,9 +20,9 @@ export default function DogTeamPreview({ dogs }: { dogs: Dog[] }) {
           </Link>
         </div>
 
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
           {dogs.map((dog) => (
-            <div key={dog.slug} className="group relative overflow-hidden rounded-sm aspect-[4/5] bg-forest/20 shadow-lg">
+            <div key={dog.slug} className="group relative overflow-hidden rounded-sm aspect-[4/5] bg-navy/20 shadow-lg">
               <Image src={dog.photo} alt={`K9 ${dog.name}`} fill
                 className="object-cover group-hover:scale-105 transition-transform duration-500"
                 sizes="(max-width: 768px) 50vw, 25vw" />
@@ -39,9 +39,8 @@ export default function DogTeamPreview({ dogs }: { dogs: Dog[] }) {
 
         <div className="mt-10 border-t border-white/10 pt-8">
           <p className="font-body text-gray-400 text-sm italic max-w-xl">
-            "Enzo and Sonja started it. Maggie is Sonja's daughter. Dino is Maggie
-            and Enzo's son. They've been tracking together their whole lives —
-            and their only job is finding your family member."
+            "Enzo and Sonja started it. Maggie is Sonja's daughter. Dino is Maggie and Enzo's son.
+            Elenor and Nova round out the team. Six dogs — one mission."
           </p>
           <p className="font-body text-warm-gold text-xs mt-2 font-semibold">— Kelly Brach</p>
         </div>

@@ -36,7 +36,7 @@ export default function GPSTeaser({ tracks }: { tracks: GPSTrack[] }) {
             {tracks.map((track) => (
               <div key={track.id}
                 className="bg-white/5 border border-white/10 hover:border-warm-gold/40 rounded-sm overflow-hidden flex items-stretch transition-all duration-200 hover:bg-white/8">
-                <div className="w-24 shrink-0 relative bg-forest/20 min-h-[80px]">
+                <div className="w-24 shrink-0 relative bg-navy/20 min-h-[80px]">
                   {track.image ? (
                     <Image src={track.image} alt={track.title} fill className="object-cover" sizes="96px" />
                   ) : (
