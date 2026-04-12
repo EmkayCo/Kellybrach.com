@@ -39,7 +39,7 @@ export const DOGS: Dog[] = [
     breed: 'Belgian Shepherd / Malinois',
     specialty: 'Scent Trailing',
     trainingBackground:
-      'Maggie is Sonja\'s daughter — her father was a bomb-scent-trained Belgian Malinois. At 70 lbs she has her mother\'s drive and her father\'s intensity. She excels on trails where the scent has had time to settle, and she does not quit.',
+      'Maggie is Sonja\'s daughter — her father was a bomb-scent-trained Belgian Malinois. She inherited her mother\'s black coat and her father\'s relentless drive. At 70 lbs she is the most tenacious dog on the team on cold trails, and she does not quit.',
     photo: '/images/dogs/maggie.jpg',
     active: true,
   },
