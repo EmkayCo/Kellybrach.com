@@ -1,73 +1,68 @@
 import Link from 'next/link'
-import SectionHeader from '@/components/shared/SectionHeader'
 
 const steps = [
   {
-    step: '01',
-    title: 'Scent Article',
-    description:
-      'You provide a sealed scent article belonging exclusively to your pet — a worn item they\'ve touched recently.',
-    icon: '🧶',
+    n: '01',
+    title: 'You call us the moment they go missing',
+    body: "Not after you've looked for a day. The scent trail fades with every passing hour — and every boot that walks through the area.",
   },
   {
-    step: '02',
-    title: 'K9 Track',
-    description:
-      'Our trained K9 picks up the scent at the last-known location and begins tracking your pet\'s trail with GPS recording.',
-    icon: '🐕',
+    n: '02',
+    title: 'Our K9 picks up the exact trail your pet left',
+    body: 'Using a scent article sealed in a bag. Not a general "animal" scent — the specific scent of your specific pet.',
   },
   {
-    step: '03',
-    title: 'Action Plan',
-    description:
-      'We provide a full action plan — targeted flyer zones, trap placement recommendations, and scheduled re-checks.',
-    icon: '📋',
+    n: '03',
+    title: 'You get a GPS track and a real action plan',
+    body: 'We map the exact direction of travel. That tells us where to set traps, where to post flyers, and where to search next.',
   },
 ]
 
 export default function HowItWorksPreview() {
   return (
-    <section className="section-padding bg-cream">
+    <section className="section-padding bg-cream grain-overlay">
       <div className="section-container">
-        <SectionHeader
-          title="A Proven Process When Every Minute Counts"
-          subtitle="Our K9 tracking method follows a precise protocol designed to maximize the chance of finding your pet."
-          centered
-        />
 
-        <div className="mt-12 grid grid-cols-1 md:grid-cols-3 gap-8">
-          {steps.map((step, i) => (
-            <div key={step.step} className="relative flex flex-col items-center text-center">
-              {/* Connector line */}
-              {i < steps.length - 1 && (
-                <div className="hidden md:block absolute top-10 left-1/2 w-full h-0.5 bg-warm-gold/30" />
-              )}
+        {/* Editorial header */}
+        <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-14">
+          <div>
+            <p className="label-overline text-warm-gold mb-3">The Process</p>
+            <h2 className="font-display text-4xl md:text-5xl font-bold text-navy leading-tight max-w-md">
+              What we do the moment you call
+            </h2>
+          </div>
+          <Link
+            href="/how-it-works"
+            className="text-forest font-body font-semibold text-sm hover:text-warm-gold transition-colors flex items-center gap-1 shrink-0"
+          >
+            Full process walkthrough →
+          </Link>
+        </div>
 
-              <div className="relative z-10 w-20 h-20 bg-forest rounded-full flex items-center justify-center text-3xl mb-4 shadow-md">
-                {step.icon}
-              </div>
-
-              <span className="text-xs font-mono text-warm-gold font-bold tracking-widest mb-1">
-                STEP {step.step}
+        {/* Steps — horizontal on desktop, vertical on mobile */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-0 md:gap-px bg-gray-200 rounded-lg overflow-hidden shadow-sm">
+          {steps.map((step) => (
+            <div key={step.n} className="bg-white p-8 relative">
+              {/* Step number — large watermark */}
+              <span className="absolute top-4 right-6 font-display text-7xl font-bold text-gray-50 select-none leading-none">
+                {step.n}
               </span>
-              <h3 className="font-display text-xl font-bold text-navy mb-2">
-                {step.title}
-              </h3>
-              <p className="text-gray-600 font-body leading-relaxed text-sm">
-                {step.description}
-              </p>
+              <div className="relative z-10">
+                <div className="w-8 h-0.5 bg-warm-gold mb-5" />
+                <h3 className="font-display text-xl font-bold text-navy leading-snug mb-3">
+                  {step.title}
+                </h3>
+                <p className="font-body text-sm text-gray-600 leading-relaxed">
+                  {step.body}
+                </p>
+              </div>
             </div>
           ))}
         </div>
 
-        <div className="mt-10 text-center">
-          <Link
-            href="/how-it-works"
-            className="text-forest font-semibold hover:text-warm-gold transition-colors inline-flex items-center gap-1"
-          >
-            Learn more about the process →
-          </Link>
-        </div>
+        {/* Track line divider */}
+        <div className="track-divider mt-14" />
+
       </div>
     </section>
   )

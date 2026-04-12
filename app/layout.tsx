@@ -3,7 +3,7 @@ import '@/styles/globals.css'
 import Navbar from '@/components/layout/Navbar'
 import Footer from '@/components/layout/Footer'
 import ScamBanner from '@/components/layout/ScamBanner'
-import { getSiteSettings } from '@/sanity/lib/queries'
+import { SITE } from '@/lib/data/site'
 
 export const metadata: Metadata = {
   title: {
@@ -11,32 +11,24 @@ export const metadata: Metadata = {
     template: '%s | Kelly Brach — Lost Pet K9 Handler',
   },
   description:
-    'Professional K9 tracking & trailing teams for lost pets. Serving Long Island, NY and the Northeast. Call 631-973-LOST.',
+    'Professional K9 tracking & trailing for lost pets. Serving Long Island, NY and the Northeast. Call or text 631-973-LOST.',
   metadataBase: new URL('https://kellybrach.com'),
   openGraph: {
     siteName: 'Kelly Brach — Lost Pet K9 Handler',
-    images: [{ url: '/og-image.jpg', width: 1200, height: 630 }],
+    images: [{ url: '/images/og-image.jpg', width: 1200, height: 630 }],
   },
 }
 
-export default async function RootLayout({
-  children,
-}: {
-  children: React.ReactNode
-}) {
-  const settings = await getSiteSettings()
-
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
       <head>
-        {/* Google Fonts — loaded at runtime, not build time */}
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link
           href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;0,8..60,600;0,8..60,700;1,8..60,400&family=JetBrains+Mono:wght@400;700&display=swap"
           rel="stylesheet"
         />
-        {/* Map font families to CSS variables so Tailwind config works */}
         <style>{`
           :root {
             --font-playfair: 'Playfair Display', Georgia, serif;
@@ -46,15 +38,10 @@ export default async function RootLayout({
         `}</style>
       </head>
       <body className="min-h-screen flex flex-col">
-        {settings?.scamAlertActive && (
-          <ScamBanner
-            text={settings.scamAlertText}
-            active={settings.scamAlertActive}
-          />
-        )}
-        <Navbar />
+        {SITE.scamAlertActive && <ScamBanner text={SITE.scamAlertText} />}
+        <Navbar phone={SITE.phone} />
         <main className="flex-1">{children}</main>
-        <Footer phone={settings?.phone} email={settings?.email} />
+        <Footer phone={SITE.phone} email={SITE.email} />
       </body>
     </html>
   )

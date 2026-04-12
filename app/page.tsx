@@ -7,22 +7,19 @@ import HowItWorksPreview from '@/components/home/HowItWorksPreview'
 import DogTeamPreview from '@/components/home/DogTeamPreview'
 import TestimonialsStrip from '@/components/home/TestimonialsStrip'
 import GPSTeaser from '@/components/home/GPSTeaser'
-import {
-  getSiteSettings,
-  getAllDogs,
-  getFeaturedTestimonials,
-  getRecentGPSTracks,
-} from '@/sanity/lib/queries'
+import { SITE } from '@/lib/data/site'
+import { DOGS } from '@/lib/data/dogs'
+import { TESTIMONIALS } from '@/lib/data/testimonials'
+import { GPS_TRACKS } from '@/lib/data/gps-tracks'
 
 export const metadata: Metadata = {
   title: 'Kelly Brach — Lost Pet K9 Handler | Kings Park, NY',
   description:
-    'Professional K9 tracking & trailing teams for lost pets in Long Island, NY and the Northeast. Call 631-973-LOST. GPS-documented searches, trained dogs, proven results.',
+    'Your pet left a trail. Our K9 can follow it. Professional lost pet tracking serving Long Island, NY and the Northeast. Call 631-973-LOST.',
   openGraph: {
     title: 'Kelly Brach — Lost Pet K9 Handler',
-    description:
-      'Professional K9 tracking & trailing teams. When your pet goes missing, every hour matters.',
-    images: [{ url: '/og-image.jpg', width: 1200, height: 630 }],
+    description: 'Your pet left a trail. Our K9 can follow it.',
+    images: [{ url: '/images/og-image.jpg', width: 1200, height: 630 }],
   },
 }
 
@@ -30,67 +27,50 @@ const localBusinessSchema = {
   '@context': 'https://schema.org',
   '@type': 'LocalBusiness',
   name: 'Kelly Brach — Lost Pet K9 Handler',
-  description: 'Professional K9 tracking & trailing teams for lost pets in the Northeast.',
+  description: 'Professional K9 tracking & trailing for lost pets in the Northeast.',
   telephone: '+16319735678',
   email: 'kelly@kellybrach.com',
-  address: {
-    '@type': 'PostalAddress',
-    addressLocality: 'Kings Park',
-    addressRegion: 'NY',
-    addressCountry: 'US',
-  },
+  address: { '@type': 'PostalAddress', addressLocality: 'Kings Park', addressRegion: 'NY', addressCountry: 'US' },
   areaServed: ['New York', 'New Jersey', 'Connecticut', 'Pennsylvania'],
   url: 'https://kellybrach.com',
 }
 
-export default async function HomePage() {
-  const [settings, dogs, testimonials, tracks] = await Promise.all([
-    getSiteSettings(),
-    getAllDogs(),
-    getFeaturedTestimonials(3),
-    getRecentGPSTracks(3),
-  ])
-
-  const phone = settings?.phone ?? '631-973-LOST'
+export default function HomePage() {
+  const featuredTestimonials = TESTIMONIALS.filter((t) => t.featured).concat(TESTIMONIALS.filter((t) => !t.featured)).slice(0, 3)
+  const recentTracks = GPS_TRACKS.slice(0, 3)
 
   return (
     <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }}
-      />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }} />
 
-      <Hero phone={phone} />
-      <UrgencyStrip phone={phone} />
+      <Hero phone={SITE.phone} heroImageUrl="/images/hero.jpg" />
+      <UrgencyStrip phone={SITE.phone} />
       <TrustBar />
       <HowItWorksPreview />
-      <DogTeamPreview dogs={dogs} />
-      <TestimonialsStrip testimonials={testimonials} />
-      <GPSTeaser tracks={tracks} />
+      <DogTeamPreview dogs={DOGS.filter((d) => d.active)} />
+      <TestimonialsStrip testimonials={featuredTestimonials} />
+      <GPSTeaser tracks={recentTracks} />
 
-      {/* Final CTA */}
-      <section className="section-padding bg-warm-gold">
-        <div className="section-container text-center">
-          <h2 className="font-display text-3xl md:text-4xl font-bold text-white mb-4">
-            Is Your Pet Missing Right Now?
+      {/* Final CTA — raw urgency, no polish */}
+      <section className="bg-warm-gold grain-overlay relative overflow-hidden">
+        <div className="section-container py-20 text-center relative z-10">
+          <p className="label-overline text-white/70 mb-4">Don't wait</p>
+          <h2 className="font-display text-4xl md:text-6xl font-bold text-white mb-6 leading-tight">
+            Is your pet missing<br />right now?
           </h2>
-          <p className="text-white/90 text-lg mb-8 max-w-xl mx-auto font-body">
-            Don't wait. Time is the most critical factor in a successful track.
-            Contact us immediately.
+          <p className="text-white/90 text-xl font-body mb-10 max-w-lg mx-auto">
+            Every hour the scent trail fades. Call Kelly directly — she will tell you
+            exactly what to do right now, before the trail is gone.
           </p>
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-            <Link
-              href="/contact"
-              className="bg-navy text-white font-bold font-body text-lg py-4 px-10 rounded-md hover:bg-navy/90 transition-colors"
-            >
-              Request a Search — It's an Emergency →
-            </Link>
-          </div>
-          <p className="mt-6 font-mono text-2xl text-white font-bold tracking-wide">
-            <a href={`tel:${phone.replace(/-/g, '').replace('LOST', '5678')}`} className="hover:text-navy transition-colors">
-              {phone}
-            </a>
-          </p>
+          <a href={SITE.phoneHref}
+            className="font-mono text-4xl md:text-5xl font-bold text-white hover:text-navy transition-colors block mb-4 tracking-tight">
+            {SITE.phone}
+          </a>
+          <p className="text-white/60 text-sm font-body mb-8">Call or text · 7 days a week</p>
+          <Link href="/contact"
+            className="inline-flex items-center gap-2 text-white/80 hover:text-white transition-colors text-sm font-body border-b border-white/40 hover:border-white pb-0.5">
+            Or fill out the contact form →
+          </Link>
         </div>
       </section>
     </>
