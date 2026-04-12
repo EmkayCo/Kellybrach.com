@@ -1,10 +1,11 @@
 import type { MetadataRoute } from 'next'
+import { LOCATIONS } from '@/lib/data/locations'
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const base = 'https://kellybrach.com'
   const now = new Date()
 
-  return [
+  const corePages: MetadataRoute.Sitemap = [
     {
       url: base,
       lastModified: now,
@@ -53,5 +54,22 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: 'monthly',
       priority: 0.9,
     },
+    // Locations index
+    {
+      url: `${base}/locations`,
+      lastModified: now,
+      changeFrequency: 'monthly',
+      priority: 0.85,
+    },
   ]
+
+  // Individual location pages — tier 1 get higher priority
+  const locationPages: MetadataRoute.Sitemap = LOCATIONS.map((loc) => ({
+    url: `${base}/locations/${loc.slug}`,
+    lastModified: now,
+    changeFrequency: 'monthly' as const,
+    priority: loc.tier === 1 ? 0.85 : loc.tier === 2 ? 0.75 : 0.65,
+  }))
+
+  return [...corePages, ...locationPages]
 }

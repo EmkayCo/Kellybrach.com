@@ -3,19 +3,21 @@ import Link from 'next/link'
 import SectionHeader from '@/components/shared/SectionHeader'
 
 export const metadata: Metadata = {
-  title: 'Service Area',
+  title: 'Service Area — Northeast K9 Pet Tracking | Kelly Brach K9',
   description:
-    'Kelly Brach serves Kings Park, NY (Long Island) as a home base and travels throughout the Northeast for lost pet K9 tracking. Coverage includes NY, NJ, CT, PA and beyond.',
+    'Kelly Brach K9 serves Long Island (home base) and travels throughout the entire Northeast — NY, NJ, CT, PA, MA, RI. GPS-documented lost pet K9 tracking. Call 631-973-LOST.',
 }
 
 const coveredAreas = [
-  { state: 'New York', notes: 'Home base — Long Island, NYC Metro, Hudson Valley, Upstate', priority: true },
-  { state: 'New Jersey', notes: 'North & Central NJ', priority: true },
-  { state: 'Connecticut', notes: 'Statewide coverage', priority: true },
-  { state: 'Pennsylvania', notes: 'Eastern PA, Philadelphia Metro', priority: true },
-  { state: 'Massachusetts', notes: 'Select areas — contact to confirm', priority: false },
-  { state: 'Rhode Island', notes: 'Available upon request', priority: false },
-  { state: 'Other Northeast States', notes: 'Contact us — we travel for the right case', priority: false },
+  { state: 'Long Island, NY', notes: 'Home base — Nassau & Suffolk County', priority: true, slug: 'long-island-ny' },
+  { state: 'New York City', notes: 'All five boroughs + metro', priority: true, slug: 'new-york-city' },
+  { state: 'Hudson Valley, NY', notes: 'Westchester, Rockland, Orange, Putnam, Dutchess', priority: true, slug: 'hudson-valley-ny' },
+  { state: 'New Jersey', notes: 'North & Central NJ statewide', priority: true, slug: 'new-jersey' },
+  { state: 'Connecticut', notes: 'Statewide coverage', priority: true, slug: 'connecticut' },
+  { state: 'Eastern Pennsylvania', notes: 'Philadelphia Metro, Bucks, Montgomery, Lehigh Valley', priority: true, slug: 'pennsylvania' },
+  { state: 'Massachusetts', notes: 'Select areas — contact to confirm', priority: false, slug: 'massachusetts' },
+  { state: 'Rhode Island', notes: 'Available upon request', priority: false, slug: 'rhode-island' },
+  { state: 'Other Northeast States', notes: 'Contact us — we travel for the right case', priority: false, slug: null },
 ]
 
 export default function ServiceAreaPage() {
@@ -103,7 +105,13 @@ export default function ServiceAreaPage() {
               >
                 <div>
                   <p className={`font-semibold font-body ${area.priority ? 'text-navy' : 'text-gray-500'}`}>
-                    {area.state}
+                    {area.slug ? (
+                      <Link href={`/locations/${area.slug}`} className="hover:text-warm-gold transition-colors">
+                        {area.state}
+                      </Link>
+                    ) : (
+                      area.state
+                    )}
                     {area.priority && (
                       <span className="ml-2 text-xs bg-navy/10 text-gray-600 px-1.5 py-0.5 rounded font-normal">
                         Primary
@@ -112,11 +120,27 @@ export default function ServiceAreaPage() {
                   </p>
                   <p className="text-sm text-gray-500 font-body">{area.notes}</p>
                 </div>
-                <div className={`text-xl ${area.priority ? 'text-warm-gold' : 'text-gray-300'}`}>
-                  {area.priority ? '✓' : '~'}
+                <div className="flex items-center gap-3">
+                  {area.slug && (
+                    <Link
+                      href={`/locations/${area.slug}`}
+                      className="text-xs text-warm-gold hover:text-navy transition-colors font-semibold font-body"
+                    >
+                      Details →
+                    </Link>
+                  )}
+                  <div className={`text-xl ${area.priority ? 'text-warm-gold' : 'text-gray-300'}`}>
+                    {area.priority ? '✓' : '~'}
+                  </div>
                 </div>
               </div>
             ))}
+          </div>
+
+          <div className="mt-6 text-center">
+            <Link href="/locations" className="text-sm text-warm-gold hover:text-navy transition-colors font-semibold">
+              View all Northeast location pages →
+            </Link>
           </div>
         </div>
       </section>
