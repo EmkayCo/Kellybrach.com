@@ -39,22 +39,27 @@ export default function HowItWorksPreview() {
           </Link>
         </div>
 
-        {/* Steps — horizontal on desktop, vertical on mobile */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-0 md:gap-px bg-gray-200 rounded-lg overflow-hidden shadow-sm">
-          {steps.map((step) => (
+        {/* Steps — connected on desktop */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-0 md:gap-px bg-gray-200 rounded-sm overflow-hidden shadow-sm">
+          {steps.map((step, i) => (
             <div key={step.n} className="bg-white p-8 relative">
               {/* Step number — large watermark */}
-              <span className="absolute top-4 right-6 font-display text-7xl font-bold text-gray-50 select-none leading-none">
+              <span className="absolute top-4 right-6 font-display text-8xl font-bold text-gray-50 select-none leading-none pointer-events-none">
                 {step.n}
               </span>
               <div className="relative z-10">
-                <div className="w-8 h-0.5 bg-warm-gold mb-5" />
+                {/* Gold accent line — wider than before */}
+                <div className="w-10 h-0.5 bg-warm-gold mb-5" />
                 <h3 className="font-display text-xl font-bold text-navy leading-snug mb-3">
                   {step.title}
                 </h3>
                 <p className="font-body text-sm text-gray-600 leading-relaxed">
                   {step.body}
                 </p>
+                {/* Step connector dot for desktop */}
+                {i < steps.length - 1 && (
+                  <div className="hidden md:block absolute top-8 -right-px w-px h-8 bg-warm-gold/20" />
+                )}
               </div>
             </div>
           ))}

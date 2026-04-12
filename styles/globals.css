@@ -28,17 +28,26 @@
 }
 
 @layer components {
+  /* ── Buttons ──────────────────────────────────────────── */
+
   .btn-primary {
-    @apply inline-flex items-center justify-center px-6 py-3 bg-warm-gold text-white font-body font-semibold rounded-sm hover:bg-yellow-700 transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-warm-gold focus:ring-offset-2 tracking-wide;
+    @apply inline-flex items-center justify-center px-6 py-3 bg-warm-gold text-white font-body font-semibold rounded-sm hover:bg-amber-700 active:bg-amber-800 transition-colors duration-150 focus:outline-none focus:ring-2 focus:ring-warm-gold focus:ring-offset-2 tracking-wide;
   }
 
   .btn-ghost {
-    @apply inline-flex items-center justify-center px-6 py-3 border-2 border-white text-white font-body font-semibold rounded-sm hover:bg-white hover:text-navy transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 tracking-wide;
+    @apply inline-flex items-center justify-center px-6 py-3 border-2 border-white text-white font-body font-semibold rounded-sm hover:bg-white hover:text-navy transition-colors duration-150 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 tracking-wide;
   }
 
   .btn-secondary {
-    @apply inline-flex items-center justify-center px-6 py-3 border-2 border-forest text-forest font-body font-semibold rounded-sm hover:bg-forest hover:text-white transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-forest focus:ring-offset-2 tracking-wide;
+    @apply inline-flex items-center justify-center px-6 py-3 border-2 border-forest text-forest font-body font-semibold rounded-sm hover:bg-forest hover:text-white transition-colors duration-150 focus:outline-none focus:ring-2 focus:ring-forest focus:ring-offset-2 tracking-wide;
   }
+
+  /* Large urgent CTA — phone numbers, final sections */
+  .btn-cta {
+    @apply inline-flex items-center justify-center gap-3 px-8 py-4 bg-warm-gold text-white font-mono font-bold text-xl rounded-sm hover:bg-amber-700 active:scale-[0.98] transition-all duration-150 focus:outline-none focus:ring-2 focus:ring-warm-gold focus:ring-offset-2 tracking-tight shadow-lg shadow-warm-gold/20;
+  }
+
+  /* ── Layout ───────────────────────────────────────────── */
 
   .section-container {
     @apply max-w-6xl mx-auto px-4 sm:px-6 lg:px-8;
@@ -48,23 +57,39 @@
     @apply py-16 md:py-24;
   }
 
+  /* ── Typography utilities ─────────────────────────────── */
+
   .phone-display {
     @apply font-mono text-2xl md:text-3xl font-bold tracking-wide;
   }
 
+  /* Editorial label — small caps overline */
+  .label-overline {
+    @apply font-mono text-xs tracking-widest uppercase;
+  }
+
+  /* Stat display */
+  .stat-number {
+    @apply font-display font-bold leading-none;
+  }
+
+  /* ── Decorative motifs ────────────────────────────────── */
+
   /* Grain texture overlay for cream sections */
   .grain-overlay {
     position: relative;
+    isolation: isolate;
   }
   .grain-overlay::after {
     content: '';
     position: absolute;
     inset: 0;
     pointer-events: none;
-    opacity: 0.035;
+    opacity: 0.04;
     background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
     background-repeat: repeat;
     background-size: 128px 128px;
+    z-index: -1;
   }
 
   /* Horizontal track-line divider — GPS trail motif */
@@ -72,7 +97,7 @@
     position: relative;
     height: 2px;
     background: linear-gradient(90deg, transparent, #C8922A 20%, #C8922A 80%, transparent);
-    opacity: 0.4;
+    opacity: 0.5;
   }
   .track-divider::before,
   .track-divider::after {
@@ -88,13 +113,14 @@
   .track-divider::before { left: 20%; }
   .track-divider::after  { right: 20%; }
 
-  /* Editorial label — small caps overline */
-  .label-overline {
-    @apply font-mono text-xs tracking-widest uppercase;
+  /* Gold accent bar — used on step cards and credential cards */
+  .gold-accent {
+    @apply block w-10 h-0.5 bg-warm-gold mb-5;
   }
 
-  /* Stat display */
-  .stat-number {
-    @apply font-display font-bold leading-none;
+  /* Dot grid background — map/navigation motif */
+  .dot-grid {
+    background-image: radial-gradient(circle, #C8922A 1px, transparent 1px);
+    background-size: 24px 24px;
   }
 }

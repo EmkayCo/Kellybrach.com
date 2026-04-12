@@ -22,14 +22,16 @@ export default function DogTeamPreview({ dogs }: { dogs: Dog[] }) {
 
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
           {dogs.map((dog) => (
-            <div key={dog.slug} className="group relative overflow-hidden rounded-sm aspect-[4/5] bg-forest/20">
+            <div key={dog.slug} className="group relative overflow-hidden rounded-sm aspect-[4/5] bg-forest/20 shadow-lg">
               <Image src={dog.photo} alt={`K9 ${dog.name}`} fill
                 className="object-cover group-hover:scale-105 transition-transform duration-500"
                 sizes="(max-width: 768px) 50vw, 25vw" />
               <div className="absolute inset-0 bg-gradient-to-t from-navy via-navy/20 to-transparent" />
+              <div className="absolute inset-0 bg-navy/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
               <div className="absolute bottom-0 left-0 right-0 p-4">
                 <p className="font-display text-xl font-bold text-white">{dog.name}</p>
                 <p className="text-xs text-warm-gold font-body mt-0.5">{dog.specialty}</p>
+                <p className="text-xs text-gray-300 font-body mt-1 opacity-0 group-hover:opacity-100 transition-opacity duration-200">{dog.breed}</p>
               </div>
             </div>
           ))}

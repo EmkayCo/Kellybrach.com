@@ -16,7 +16,7 @@ export default function Hero({
     <section className="relative min-h-[92vh] flex items-stretch bg-navy overflow-hidden">
 
       {/* Photo — right half on desktop, atmospheric bg on mobile */}
-      <div className="absolute inset-0 lg:left-[48%]">
+      <div className="absolute inset-0 lg:left-[46%]">
         {heroImageUrl ? (
           <Image
             src={heroImageUrl}
@@ -24,13 +24,14 @@ export default function Hero({
             fill
             className="object-cover object-center"
             priority
-            sizes="(max-width: 1024px) 100vw, 52vw"
+            sizes="(max-width: 1024px) 100vw, 54vw"
           />
         ) : (
           <div className="w-full h-full bg-gradient-to-br from-forest/50 via-navy/80 to-navy" />
         )}
-        <div className="absolute inset-0 bg-gradient-to-r from-navy via-navy/70 lg:via-navy/50 to-navy/10 lg:to-transparent" />
-        <div className="absolute inset-0 bg-gradient-to-t from-navy/90 via-transparent to-navy/20" />
+        {/* Stronger left gradient for text legibility */}
+        <div className="absolute inset-0 bg-gradient-to-r from-navy via-navy/75 lg:via-navy/55 to-navy/10 lg:to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-t from-navy/95 via-transparent to-navy/25" />
       </div>
 
       <div className="relative z-10 flex items-center section-container py-24 lg:py-32">
@@ -65,9 +66,9 @@ export default function Hero({
             That's not guessing. That's not hoping. That's a real lead.
           </p>
 
-          {/* Phone NUMBER is the primary CTA — not a button */}
+          {/* Phone NUMBER is the primary CTA */}
           <div className="mb-8">
-            <p className="text-gray-400 text-xs label-overline mb-3">
+            <p className="label-overline text-gray-500 mb-3">
               Call or text Kelly directly — right now
             </p>
             <a
@@ -76,7 +77,7 @@ export default function Hero({
             >
               {phone}
             </a>
-            <p className="text-gray-500 text-sm font-body">Available 7 days a week</p>
+            <p className="text-gray-500 text-xs font-body">Available 7 days a week · Long Island &amp; Northeast</p>
           </div>
 
           {/* Secondary actions */}
