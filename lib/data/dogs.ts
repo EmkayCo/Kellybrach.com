@@ -26,10 +26,10 @@ export const DOGS: Dog[] = [
   {
     slug: 'sonja',
     name: 'Sonja',
-    breed: 'Belgian Shepherd',
+    breed: 'Belgian Shepherd (Tervuren)',
     specialty: 'Trailing Specialist',
     trainingBackground:
-      'Sonja is a precision trailer at 65 lbs — fast, focused, and relentless on a cold scent. She works suburban and dense terrain where contamination is highest, and her drive in the field is the reason her daughter Maggie is on this team.',
+      'Sonja is a precision trailer at 65 lbs — fast, focused, and relentless on a cold scent. Her sable coat and black mask are unmistakable in the field. She works dense suburban terrain where contamination is highest, and her drive is the reason her daughter Maggie is on this team.',
     photo: '/images/dogs/sonja.jpg',
     active: true,
   },
@@ -49,7 +49,7 @@ export const DOGS: Dog[] = [
     breed: 'Belgian Shepherd',
     specialty: 'Tracking & Trailing',
     trainingBackground:
-      'Dino is the youngest and the biggest — 110 lbs, son of Maggie and Enzo. He inherited Enzo\'s endurance and Maggie\'s nose. He was the youngest dog on this team to work a real case, and he has not stopped since.',
+      'Dino is the biggest dog on the team at 110 lbs — son of Maggie and Enzo, black like his mother. He inherited Enzo\'s endurance and Maggie\'s nose, and he was the youngest dog on this team to work a real case. He has not stopped since.',
     photo: '/images/dogs/dino.jpg',
     active: true,
   },
