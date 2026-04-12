@@ -1,21 +1,5 @@
-import { Playfair_Display, Source_Serif_4, JetBrains_Mono } from 'next/font/google'
+// Font CSS variable names — matched in tailwind.config.ts
+// Fonts are loaded via <link> tag in app/layout.tsx using Google Fonts CDN
+// (avoids build-time network fetch required by next/font/google)
 
-export const playfair = Playfair_Display({
-  subsets: ['latin'],
-  variable: '--font-playfair',
-  display: 'swap',
-})
-
-export const sourceSerif = Source_Serif_4({
-  subsets: ['latin'],
-  variable: '--font-source-serif',
-  display: 'swap',
-  weight: ['300', '400', '600', '700'],
-})
-
-export const jetbrainsMono = JetBrains_Mono({
-  subsets: ['latin'],
-  variable: '--font-jetbrains',
-  display: 'swap',
-  weight: ['400', '700'],
-})
+export const fontVariables = '--font-playfair --font-source-serif --font-jetbrains'

@@ -64,97 +64,121 @@ export interface SiteSettings {
 // ─── GROQ Queries ───────────────────────────────────────────────────────────
 
 export async function getSiteSettings(): Promise<SiteSettings | null> {
-  return client.fetch(
-    `*[_type == "siteSettings" && _id == "siteSettings"][0]{
-      phone,
-      email,
-      scamAlertText,
-      scamAlertActive,
-      serviceArea
-    }`
-  )
+  try {
+    return await client.fetch(
+      `*[_type == "siteSettings" && _id == "siteSettings"][0]{
+        phone,
+        email,
+        scamAlertText,
+        scamAlertActive,
+        serviceArea
+      }`
+    )
+  } catch {
+    return null
+  }
 }
 
 export async function getAllDogs(): Promise<Dog[]> {
-  return client.fetch(
-    `*[_type == "dog" && active == true] | order(order asc, name asc){
-      _id,
-      name,
-      slug,
-      photo,
-      breed,
-      trainingBackground,
-      specialty,
-      active,
-      order
-    }`
-  )
+  try {
+    return await client.fetch(
+      `*[_type == "dog" && active == true] | order(order asc, name asc){
+        _id,
+        name,
+        slug,
+        photo,
+        breed,
+        trainingBackground,
+        specialty,
+        active,
+        order
+      }`
+    )
+  } catch {
+    return []
+  }
 }
 
 export async function getFeaturedTestimonials(limit = 3): Promise<Testimonial[]> {
-  return client.fetch(
-    `*[_type == "testimonial" && featured == true] | order(_createdAt desc)[0...$limit]{
-      _id,
-      ownerName,
-      petName,
-      petType,
-      location,
-      quote,
-      rating,
-      date,
-      featured,
-      outcome,
-      photo
-    }`,
-    { limit: limit - 1 }
-  )
+  try {
+    return await client.fetch(
+      `*[_type == "testimonial" && featured == true] | order(_createdAt desc)[0...$limit]{
+        _id,
+        ownerName,
+        petName,
+        petType,
+        location,
+        quote,
+        rating,
+        date,
+        featured,
+        outcome,
+        photo
+      }`,
+      { limit: limit - 1 }
+    )
+  } catch {
+    return []
+  }
 }
 
 export async function getAllTestimonials(): Promise<Testimonial[]> {
-  return client.fetch(
-    `*[_type == "testimonial"] | order(featured desc, _createdAt desc){
-      _id,
-      ownerName,
-      petName,
-      petType,
-      location,
-      quote,
-      rating,
-      date,
-      featured,
-      outcome,
-      photo
-    }`
-  )
+  try {
+    return await client.fetch(
+      `*[_type == "testimonial"] | order(featured desc, _createdAt desc){
+        _id,
+        ownerName,
+        petName,
+        petType,
+        location,
+        quote,
+        rating,
+        date,
+        featured,
+        outcome,
+        photo
+      }`
+    )
+  } catch {
+    return []
+  }
 }
 
 export async function getAllGPSTracks(): Promise<GPSTrack[]> {
-  return client.fetch(
-    `*[_type == "gpsTrack"] | order(date desc){
-      _id,
-      title,
-      date,
-      locationLabel,
-      petType,
-      trackImage,
-      embedUrl,
-      outcomeNote
-    }`
-  )
+  try {
+    return await client.fetch(
+      `*[_type == "gpsTrack"] | order(date desc){
+        _id,
+        title,
+        date,
+        locationLabel,
+        petType,
+        trackImage,
+        embedUrl,
+        outcomeNote
+      }`
+    )
+  } catch {
+    return []
+  }
 }
 
 export async function getRecentGPSTracks(limit = 3): Promise<GPSTrack[]> {
-  return client.fetch(
-    `*[_type == "gpsTrack"] | order(date desc)[0...$limit]{
-      _id,
-      title,
-      date,
-      locationLabel,
-      petType,
-      trackImage,
-      embedUrl,
-      outcomeNote
-    }`,
-    { limit: limit - 1 }
-  )
+  try {
+    return await client.fetch(
+      `*[_type == "gpsTrack"] | order(date desc)[0...$limit]{
+        _id,
+        title,
+        date,
+        locationLabel,
+        petType,
+        trackImage,
+        embedUrl,
+        outcomeNote
+      }`,
+      { limit: limit - 1 }
+    )
+  } catch {
+    return []
+  }
 }

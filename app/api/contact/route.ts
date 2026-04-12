@@ -98,7 +98,7 @@ export async function POST(req: NextRequest) {
     await resend.emails.send({
       from: 'Kelly Brach Site <noreply@kellybrach.com>',
       to: ['kelly@kellybrach.com'],
-      replyTo: data.email,
+      reply_to: data.email,
       subject: `🚨 Lost Pet Search Request — ${data.fullName} (${petTypeLabel} in ${data.cityState})`,
       html: emailHtml,
     })

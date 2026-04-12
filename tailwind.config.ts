@@ -16,6 +16,7 @@ const config: Config = {
         'red-alert': '#B91C1C',
       },
       fontFamily: {
+        // These reference the CSS custom properties set in app/layout.tsx <style>
         display: ['var(--font-playfair)', 'Georgia', 'serif'],
         body: ['var(--font-source-serif)', 'Georgia', 'serif'],
         mono: ['var(--font-jetbrains)', 'Courier New', 'monospace'],
