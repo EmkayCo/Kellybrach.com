@@ -177,23 +177,25 @@ export default function ServiceAreaPage() {
       </section>
 
       {/* CTA */}
-      <section className="section-padding bg-forest text-white">
-        <div className="section-container text-center">
-          <h2 className="font-display text-3xl font-bold mb-4">
-            Not Sure If We Cover Your Area?
+      <section className="bg-warm-gold grain-overlay relative overflow-hidden">
+        <div className="section-container py-20 text-center relative z-10">
+          <p className="label-overline text-white/70 mb-4">Not Sure If We Cover Your Area?</p>
+          <h2 className="font-display text-4xl font-bold text-white mb-4">
+            Call us and ask.
           </h2>
-          <p className="text-white/80 text-lg font-body mb-8 max-w-lg mx-auto">
-            Call us. We'd rather spend 2 minutes on the phone figuring out
-            logistics than have you go without help.
+          <p className="text-white/80 font-body mb-8 max-w-lg mx-auto">
+            We'd rather spend 2 minutes on the phone figuring out logistics than
+            have you go without help.
           </p>
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-            <a href="tel:+16319735678" className="btn-primary text-lg py-4 px-8 font-mono">
-              Call 631-973-LOST
-            </a>
-            <Link href="/contact" className="btn-ghost text-lg py-4 px-8">
-              Send a Message
-            </Link>
-          </div>
+          <a href="tel:+16319735678"
+            className="font-mono text-4xl font-bold text-white hover:text-navy transition-colors block mb-4 tracking-tight">
+            631-973-LOST
+          </a>
+          <p className="text-white/60 text-sm font-body mb-8">Call or text · 7 days a week</p>
+          <Link href="/contact"
+            className="inline-flex items-center gap-2 text-white/80 hover:text-white transition-colors text-sm font-body border-b border-white/40 hover:border-white pb-0.5">
+            Or send a message →
+          </Link>
         </div>
       </section>
     </>
